@@ -25,8 +25,7 @@ function handleclick(e) {
     xhr.setRequestHeader("Content-Type", "Application/json")
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            // var json = JSON.parse(xhr.responseText);
-            console.log(xhr.responseText);
+            //console.log(xhr.responseText);
         }
     }
     var data = JSON.stringify({ "Name": Sname, "Father Name": Fname })
