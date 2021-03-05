@@ -20,7 +20,7 @@ function handleclick(e) {
     console.log(Sname, Fname)
 
     var xhr = new XMLHttpRequest()
-    var url = "localhost:3000/downloads"
+    var url = "https://admitcardapi.herokuapp.com/downloads"
     xhr.open("POST", url, true)
     xhr.setRequestHeader("Content-Type", "Application/json")
     xhr.onreadystatechange = () => {
