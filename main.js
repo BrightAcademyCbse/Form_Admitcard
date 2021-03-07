@@ -64,3 +64,11 @@ $(function () {
     });
 });
 
+$(() => {
+    $("#datepicker").focus(() => {
+        document.getElementById("ui-datepicker-div").scrollIntoView()
+    })
+})
+
+
+
