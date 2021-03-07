@@ -37,21 +37,21 @@ function handleclick(e) {
     }
 
     console.log(Sname, Fname, Dob, Phone);
-    // var xhr = new XMLHttpRequest()
-    // var url = "https://admitcardapi.herokuapp.com/downloads"
-    // xhr.open("POST", url, true)
-    // xhr.setRequestHeader("Content-Type", "Application/json")
-    // xhr.onreadystatechange = () => {
-    //     if (xhr.readyState === 4 && xhr.status === 200) {
-    //         var id = JSON.parse(xhr.responseText).id
-    //         if (id != "No file") {
-    //             window.location.href = `https://admitcardapi.herokuapp.com/admit?id=${id}`
-    //         }
-    //         //console.log(xhr.responseText);
-    //     }
-    // }
-    // var data = JSON.stringify({ "Name": Sname, "Father Name": Fname })
-    // xhr.send(data)
+    var xhr = new XMLHttpRequest()
+    var url = "https://admitcardapi.herokuapp.com/downloads"
+    xhr.open("POST", url, true)
+    xhr.setRequestHeader("Content-Type", "Application/json")
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var id = JSON.parse(xhr.responseText).id
+            if (id != "No file") {
+                window.location.href = `https://admitcardapi.herokuapp.com/admit?id=${id}`
+            }
+            //console.log(xhr.responseText);
+        }
+    }
+    var data = JSON.stringify({ "Name": Sname, "Father Name": Fname })
+    xhr.send(data)
 }
 
 $(function () {
