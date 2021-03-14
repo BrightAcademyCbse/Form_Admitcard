@@ -18,34 +18,50 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <h1>Download Admit Card</h1> <br /> <br />
         <form class="form" novalidate>
             <div class="mb-3">
-                <label for="student_name" class="form-label">Student name (as given in resigtration)</label>
+                <label for="student_name" class="form-label">Student name (as given in registration)</label>
                 <input type="text" class="form-control" id="student_name" required>
             </div>
             <div class="mb-3">
-                <label for="father_name" class="form-label">Father name (as given in resigtration)</label>
+                <label for="father_name" class="form-label">Father name (as given in registration)</label>
                 <input type="text" class="form-control" id="father_name">
             </div>
             <div class="mb3">
-                <label for="phone_number" class="form-label">Phone number (as given in resigtration)</label>
+                <label for="phone_number" class="form-label">Phone number (as given in registration)</label>
                 <input type="text" id="phone_number" class="form-control">
             </div>
             <div class="mb-3">
                 <lable for="datepicker" class="form-lable">Date of Birth</lable>
                 <input type="text" id="datepicker" class="mt-3 ml-3">
             </div>
-            <div class="mb-3">
+            <div class="mb-3" id="check_container">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="handlecheck(this)">
-                <label class="form-label">Please verify the details in the downloaded admit card. If
-                    any mistake,
-                    contact us.</label>
+                <label class="form-label">Please verify the details given.</label>
             </div>
             <button ton type="submit" id="submit_button" class="btn btn-primary" onClick="handleclick(event)" disabled>
                 Submit</button>
         </form>
+    </div>
+    <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+    <div class="error">
+        <h3>Unable to Download Admit card</h3>
+        <h4>For help, please contact 7397607368, 9600795894</h4>
     </div>
 </body>
 

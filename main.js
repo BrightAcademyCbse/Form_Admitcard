@@ -16,6 +16,9 @@ function handleclick(e) {
     Phone = document.getElementById("phone_number").value
 
     document.querySelector("form").reset()
+    form = document.getElementById("container")
+    spinkit = document.querySelector(".sk-circle")
+
 
     Sname = Sname.toLowerCase().trim().replace(/\s+/g, '').replace(/\./g, '')
     Fname = Fname.toLowerCase().trim().replace(/\s+/g, '').replace(/\./g, '')
@@ -36,6 +39,9 @@ function handleclick(e) {
         return
     }
 
+    form.style.display = "none"
+    spinkit.style.display = "block"
+
     console.log(Sname, Fname, Dob, Phone);
     var xhr = new XMLHttpRequest()
     var url = "https://admitcardapi.herokuapp.com/downloads"
@@ -43,14 +49,19 @@ function handleclick(e) {
     xhr.setRequestHeader("Content-Type", "Application/json")
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            var id = JSON.parse(xhr.responseText).id
-            if (id != "No file") {
+            var id = JSON.parse(xhr.responseText).id.toString()
+            spinkit.style.display = "none"
+            if (id != "-1") {
                 window.location.href = `https://admitcardapi.herokuapp.com/admit?id=${id}`
+                form.style.display = "block"
+            } else {
+                document.querySelector(".error").style.display = "flex"
+                console.log("fail")
             }
             //console.log(xhr.responseText);
         }
     }
-    var data = JSON.stringify({ "Name": Sname, "Father Name": Fname })
+    var data = JSON.stringify({ "Name": Sname, "Father Name": Fname, "DOB": Dob, "Phone Number": Phone })
     xhr.send(data)
 }
 
