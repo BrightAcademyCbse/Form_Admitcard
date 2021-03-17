@@ -23,10 +23,16 @@ body{
 }
 
 .error{
-    display: none;
+    display: none       ;
     flex-direction: column;
     align-items: center;
     margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.err{
+    color:red;
 }
 
 /* Spinkit */
